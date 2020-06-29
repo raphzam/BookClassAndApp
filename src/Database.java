@@ -15,7 +15,7 @@ public class Database {
     public String searchBySku(String sku){
         if (databaseOfBooks.containsKey(sku)) {
             Book book = this.databaseOfBooks.get(sku);
-            String bookInfo = "SKU:" + sku + " " + book.getDisplayText() + " $" + book.getPrice();
+            String bookInfo = "SKU:" + sku + " " + book.getDisplayText() + " $" + book.getPrice(); //getDisplayText is a method of the book class
             return bookInfo;
         } else
             return "That book is not in the database";
@@ -45,11 +45,6 @@ public class Database {
 
 
 
-//
-//    public setDatabase(){
-//
-//    }
-//    public getData
 
 
 
@@ -63,24 +58,3 @@ public class Database {
 
 
 
-
-
-//    public String searchBySKU (String sku) { //search by SKU method
-//        //switch through SKUS
-//
-//
-//        //String book = SKU + title + author + description +price
-//        //return book
-//        //or System.out.println(book);
-//    }
-
-//   public Database (String sku, String title, String author, String description, double price) {
-//
-//}
-//    String[] words = new String[25];
-//    words[0] = "hello";
-//    Book[] books = new Book[6];
-//    books[0] =
-//    Book book = new Book();
-//    Book [] books = new Book[6];
-//
