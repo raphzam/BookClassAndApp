@@ -25,6 +25,16 @@ public class BookApp {
 
         System.out.println(secondBook.getDisplayText());
 
+        System.out.println("How many Java I books would you like to purchase?");
+        int userPurchaseQty = Integer.valueOf(input.nextLine());
+        System.out.println(firstBook.getTotalPrice(userPurchaseQty));
+
+
+
+        System.out.println("How many Java II books would you like to purchase?");
+        userPurchaseQty = Integer.valueOf(input.nextLine());
+        System.out.println(secondBook.getTotalPrice(userPurchaseQty));
+
 
 //        System.out.println(firstBook.getTotalPrice(20));//Java I is in stock
 //        System.out.println(secondBook.getTotalPrice(5));//Java II is not in stock and prints an additional message
@@ -36,14 +46,14 @@ public class BookApp {
         Book bookFive = new Book("The Maker's Guide to the Zombie Apocalypse", "Simon Monk", "Defend Your Base with Simple Circuits, Arduino, and Raspberry Pi", 16.50, true);
         Book bookSix = new Book("Raspberry Pi Projects for the Evil Genius", "Donald Norris", "A dozen fiendishly fun projects for the Raspberry Pi!", 14.75, true);
 
-        DatabaseHashMap myDatabase = new DatabaseHashMap();
+        Database myDatabase = new Database();
 
-        myDatabase.addtoDataBase("Java1001", bookOne);
-        myDatabase.addtoDataBase("Java1002", bookTwo);
-        myDatabase.addtoDataBase("Orcl1003", bookThree);
-        myDatabase.addtoDataBase("Python1004", bookFour);
-        myDatabase.addtoDataBase("Zombie1005", bookFive);
-        myDatabase.addtoDataBase("Rasp1006", bookSix);
+        myDatabase.addToDataBase("Java1001", bookOne);
+        myDatabase.addToDataBase("Java1002", bookTwo);
+        myDatabase.addToDataBase("Orcl1003", bookThree);
+        myDatabase.addToDataBase("Python1004", bookFour);
+        myDatabase.addToDataBase("Zombie1005", bookFive);
+        myDatabase.addToDataBase("Rasp1006", bookSix);
 
 //        myDatabase.searchBySku("Java1001");
 //        myDatabase.searchBySku("Java1002");
@@ -55,7 +65,7 @@ public class BookApp {
             myDatabase.printAllSku();
             System.out.println("Enter a SKU to find out more information");
             String userSku = input.nextLine();
-            myDatabase.searchBySku(userSku);
+            System.out.println(myDatabase.searchBySku(userSku));
             System.out.println("Search again? (no or n to quit)");
             String userAnswer = input.nextLine();
 

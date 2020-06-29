@@ -1,24 +1,28 @@
 import java.util.HashMap;
 
-public class DatabaseHashMap {
-    HashMap <String, Book> databaseOfBooks;
+public class Database {
+    private HashMap <String, Book> databaseOfBooks;
 
 
-    public DatabaseHashMap(){  //constructor
+    public Database(){  //constructor
         this.databaseOfBooks = new HashMap<String, Book>();
     }
 
-    public void addtoDataBase(String sku, Book book){
-        databaseOfBooks.put(sku, book);
+    public void addToDataBase(String sku, Book book){
+        this.databaseOfBooks.put(sku, book);
     }
 
-    public void searchBySku(String sku){
-        Book book = databaseOfBooks.get(sku);
-        System.out.println("SKU:" + sku + " " + book.getDisplayText() + " $" + book.getPrice());
+    public String searchBySku(String sku){
+        if (databaseOfBooks.containsKey(sku)) {
+            Book book = this.databaseOfBooks.get(sku);
+            String bookInfo = "SKU:" + sku + " " + book.getDisplayText() + " $" + book.getPrice();
+            return bookInfo;
+        } else
+            return "That book is not in the database";
     }
 
-    public void printAllSku(){
-        for (String sku : databaseOfBooks.keySet()){
+    public void printAllSku(){  //prints all SKUs in the hashmap when called
+        for (String sku : this.databaseOfBooks.keySet()){
             System.out.print(sku + " ");
         }
         System.out.println();
