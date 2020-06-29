@@ -5,6 +5,10 @@ public class Book {
     private double price;
     private boolean isInStock;
 
+    private String sku; // database assignment
+
+    //CONSTRUCTORS
+
     public Book (){
         System.out.println("the constructor has run");
     }
@@ -16,6 +20,13 @@ public class Book {
         this.author = author;
         this.title = title;
     }
+
+    public Book { //database
+        //sku, title, author, description, price
+    }
+
+
+    //GETTERS AND SETTERS
 
     public String getTitle(){//
         return this.title;
@@ -35,7 +46,6 @@ public class Book {
     public String getDescription(){
         return this.description;
     }
-
     public void setDescription(String description){
         this.description = description;
     }
@@ -43,6 +53,7 @@ public class Book {
     public void setPrice(double price){
         this.price= price;
     }
+
     public double getPrice(){
         return this.price;
     }
@@ -54,34 +65,29 @@ public class Book {
         return this.isInStock;
     }
 
-    //method that must take three arguments
-    public String printBook(String title, String author, String description){
-
-        String wholeBook = title + " " + author + " " + description;
-        return wholeBook;
-
-    }
 
 
-    public String getDisplayText(){
+//    OTHER CUSTOM METHODS
+
+    public String getDisplayText(){ //returns the title, author, and description as one line
         String wholeBook = "Title: " + this.title + "\t Author: " + this.author + "\t Description: " + this.description;
         return wholeBook;
     }
 
-    public double getTotalPrice(int numOfBooks){
-
+    public double getTotalPrice(int numOfBooks){//returns total price of a quantity of books
         double pricePerBook = 20;
-
         double totalPrice = pricePerBook*numOfBooks;
         if (this.isInStock == false){
             System.out.printf("We do not have your books %s in stock. We can order them and the cost will be: \n", this.title);
         }
-
         return totalPrice;
-
     }
-
 }
+
+
+
+
+
 
 
 
