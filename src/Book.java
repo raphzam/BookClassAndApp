@@ -27,6 +27,7 @@ public class Book {
 
 
     //GETTERS AND SETTERS
+    //getters return, setters assign
 
     public String getTitle(){//
         return this.title;
