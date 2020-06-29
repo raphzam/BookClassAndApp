@@ -24,10 +24,10 @@ public class Book {
     public Book (String sku, String title, String author, String description, double price) { //database
         //sku, title, author, description, price
           this.sku = sku;
-          this.title = getTitle();
-          this.author = getAuthor();
-          this.description = getDescription();
-          this.price = getPrice();
+          this.title = title;
+          this.author = author;
+          this.description = description;
+          this.price = price;
     }
 
 
@@ -72,6 +72,12 @@ public class Book {
     }
 
     //add getter and setter for sku?        //database
+    public void setSku(){
+        this.sku=sku;
+    }
+    public String getSku(){
+        return this.sku;
+    }
 
 
 
