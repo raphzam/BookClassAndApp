@@ -68,6 +68,19 @@ public class Book {
         return wholeBook;
     }
 
+    public double getTotalPrice(int numOfBooks){
+
+        double pricePerBook = 20;
+
+        double totalPrice = pricePerBook*numOfBooks;
+        if (this.isInStock == false){
+            System.out.printf("We do not have your books %s in stock. We can order them and the cost will be: \n", this.title);
+        }
+
+        return totalPrice;
+
+    }
+
 }
 
 
